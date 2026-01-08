@@ -1,18 +1,150 @@
 # devops-pipeline-gitflow-bamboo-docker
 A straightforward and Simple DevOps pipeline showing how I manage code with Git Flow, automate builds with Bamboo, and package apps with Docker. It’s a real-life example of how I deliver and track software from development to deployment.
+🧭 Project Overview
+
+This project shows a real-life DevOps pipeline that I use to manage software delivery from start to finish.
+
+🎯 Objectives
+
+Organize code changes using Git Flow branching.
+
+Automate builds and deployments with Bamboo.
+
+Package applications into Docker containers.
+
+Keep track of code, builds, and deployments for easy traceability.
+
+🛠️ Technologies Used
+
+Git + Bitbucket for version control.
+
+Bamboo CI/CD for automation.
+
+Docker + Docker Hub for containerization.
+
+AWS for deployment environments.
+
+🔁 Git Flow Branching Strategy
+
+Branch Type
+
+Purpose
+
+Notes
+
+develop
+
+Main development branch
+
+Docker images are built here
+
+feature/
+
+Work on new features
+
+Branched from develop
+
+release/
+
+Prepare releases
+
+Created automatically from develop
+
+hotfix/
+
+Quick fixes
+
+Branched from release, merged back to release and develop
+
+⚙️ CI/CD with Bamboo
+
+Bamboo builds Docker images from the develop branch.
+
+Each build gets a unique build number tag.
+
+The Git commit is tagged with the same build number.
+
+Example:
+
+Build #42 creates Docker image mycompany/leap-ui:42.
+
+Git commit 1d7bb1f is tagged as 42.
+
+📦 Docker Image Management
+
+Docker images are pushed to Docker Hub.
+
+Images are tagged with build numbers and environment names.
+
+Environment tags point to the current deployed version.
+
+Example:
+
+Image mycompany/leap-ui:42 deployed to Dev environment.
+
+Tagged as mycompany/leap-ui:DEV.
+
+Git commit 1d7bb1f also tagged DEV.
+
+🚀 Deployment Pipeline
+
+Bamboo identifies the Docker image by build number.
+
+The image is deployed to the target environment (Dev, QA, Prod).
+
+Environment tags are applied to Docker images and Git commits.
+
+🔍 Traceability Model
+
+Identifier
+
+Purpose
+
+Build Number (42)
+
+Unique tag for traceability
+
+Git Commit (1d7bb1f)
+
+Source code reference
+
+Docker Image (mycompany/leap-ui:42)
+
+Built artifact
+
+Environment Tag (DEV)
+
+Points to current deployment
+
+📈 Benefits
+
+Clear separation of development and release workflows.
+
+Automated and repeatable builds and deployments.
+
+Full traceability from code to runtime.
+
+Easy rollback and auditing.
+
+README
+
+DevOps Pipeline Project
+
+This repository contains a simple, real-life example of a DevOps pipeline I use to manage software delivery.
+
 What it does:
 
-Uses Git Flow to organize and manage code changes.
+Organizes code changes with Git Flow.
 
-Automates build and deployment processes with Bamboo.
+Automates build and deployment with Bamboo.
 
-Packages applications into Docker containers for easy deployment.
+Packages applications into Docker containers.
 
-Tracks everything from code commits to running environments for full traceability.
+Tracks code commits, builds, and deployments for full traceability.
 
 Why it matters:
 
-This pipeline helps me deliver software faster, with fewer errors, and makes it easy to track what’s running where.
+This pipeline helps deliver software faster, with fewer errors, and makes it easy to see what’s running where.
 
 Technologies:
 
@@ -32,27 +164,27 @@ Feel free to explore and adapt this pipeline for your own projects!# DevOps Pipe
 
 🧭 Project Overview
 
-This project demonstrates a complete DevOps pipeline that integrates Git Flow for version control, Bamboo for continuous integration, and Docker for containerized deployment. It ensures full traceability from source code to runtime environments.
+This project shows a real-life DevOps pipeline that I use to manage software delivery from start to finish.
 
 🎯 Objectives
 
-Implement structured branching using Git Flow
+Organize code changes using Git Flow branching.
 
-Automate builds and tagging with Bamboo CI
+Automate builds and deployments with Bamboo.
 
-Package and deploy applications using Docker
+Package applications into Docker containers.
 
-Maintain traceability between commits, builds, and environments
+Keep track of code, builds, and deployments for easy traceability.
 
 🛠️ Technologies Used
 
-Git + Bitbucket: Version control and collaboration
+Git + Bitbucket for version control.
 
-Bamboo CI/CD: Automated build and deployment
+Bamboo CI/CD for automation.
 
-Docker + Docker Hub: Containerization and image registry
+Docker + Docker Hub for containerization.
 
-AWS: Target deployment environments
+AWS for deployment environments.
 
 🔁 Git Flow Branching Strategy
 
@@ -64,65 +196,65 @@ Notes
 
 develop
 
-Main line of development
+Main development branch
 
-Docker images built here
+Docker images are built here
 
 feature/
 
-Isolated feature development
+Work on new features
 
-Named after JIRA issue, branched from develop
+Branched from develop
 
 release/
 
-Release preparation
+Prepare releases
 
-Auto-created on successful build from develop
+Created automatically from develop
 
 hotfix/
 
-Urgent fixes
+Quick fixes
 
-Branched from release, merged to release + develop
+Branched from release, merged back to release and develop
 
 ⚙️ CI/CD with Bamboo
 
-Bamboo builds Docker images from the develop branch
+Bamboo builds Docker images from the develop branch.
 
-Each build is tagged with ${bamboo_buildnumber}
+Each build gets a unique build number tag.
 
-Git commit hash is tagged with the same build number
+The Git commit is tagged with the same build number.
 
 Example:
 
-Build #42 → Docker image: mycompany/leap-ui:42
+Build #42 creates Docker image mycompany/leap-ui:42.
 
-Git commit 1d7bb1f tagged as 42
+Git commit 1d7bb1f is tagged as 42.
 
 📦 Docker Image Management
 
-Docker images are pushed to Docker Hub
+Docker images are pushed to Docker Hub.
 
-Tagged with build number and environment name
+Images are tagged with build numbers and environment names.
 
-Environment tags are floating (point to current version)
+Environment tags point to the current deployed version.
 
 Example:
 
-mycompany/leap-ui:42 → deployed to Dev
+Image mycompany/leap-ui:42 deployed to Dev environment.
 
-Tagged as mycompany/leap-ui:DEV
+Tagged as mycompany/leap-ui:DEV.
 
-Git commit 1d7bb1f also tagged DEV
+Git commit 1d7bb1f also tagged DEV.
 
 🚀 Deployment Pipeline
 
-Bamboo identifies Docker image using build number
+Bamboo identifies the Docker image by build number.
 
-Image is deployed to target environment (Dev, QA, Prod)
+The image is deployed to the target environment (Dev, QA, Prod).
 
-Environment tag applied to Docker image and Git commit
+Environment tags are applied to Docker images and Git commits.
 
 🔍 Traceability Model
 
@@ -132,11 +264,11 @@ Purpose
 
 Build Number (42)
 
-Immutable tag for traceability
+Unique tag for traceability
 
 Git Commit (1d7bb1f)
 
-Source of the build
+Source code reference
 
 Docker Image (mycompany/leap-ui:42)
 
@@ -144,51 +276,37 @@ Built artifact
 
 Environment Tag (DEV)
 
-Floating tag for current deployment
+Points to current deployment
 
 📈 Benefits
 
-Clear separation of development and release workflows
+Clear separation of development and release workflows.
 
-Automated, repeatable builds and deployments
+Automated and repeatable builds and deployments.
 
-Full traceability from source to runtime
+Full traceability from code to runtime.
 
-Simplified rollback and auditability
-
-📚 Artifacts and Visuals
-
-Pipeline diagram
-
-Git Flow branch chart
-
-Docker tagging examples
-
-Bamboo build metadata screenshot
-
-📝 Conclusion
-
-This DevOps pipeline provides a robust, traceable, and scalable foundation for managing software delivery. It aligns development workflows with deployment processes and ensures operational transparency across environments.
+Easy rollback and auditing.
 
 README
 
 DevOps Pipeline Project
 
-This repository contains a simple, real-life example of a DevOps pipeline that I use to manage software delivery.
+This repository contains a simple, real-life example of a DevOps pipeline I use to manage software delivery.
 
 What it does:
 
-Uses Git Flow to organize and manage code changes.
+Organizes code changes with Git Flow.
 
-Automates build and deployment processes with Bamboo.
+Automates build and deployment with Bamboo.
 
-Packages applications into Docker containers for easy deployment.
+Packages applications into Docker containers.
 
-Tracks everything from code commits to running environments for full traceability.
+Tracks code commits, builds, and deployments for full traceability.
 
 Why it matters:
 
-This pipeline helps me deliver software faster, with fewer errors, and makes it easy to track what’s running where.
+This pipeline helps deliver software faster, with fewer errors, and makes it easy to see what’s running where.
 
 Technologies:
 
@@ -204,3 +322,164 @@ How to use:
 
 Check the branches and Bamboo plans to see how code moves from development to production, and how Docker images are built and deployed.
 
+Feel free to explore and adapt this pipeline for your own projects!# DevOps Pipeline Project: Git Flow, Bamboo CI, and Docker Traceability
+
+🧭 Project Overview
+
+This project shows a real-life DevOps pipeline that I use to manage software delivery from start to finish.
+
+🎯 Objectives
+
+Organize code changes using Git Flow branching.
+
+Automate builds and deployments with Bamboo.
+
+Package applications into Docker containers.
+
+Keep track of code, builds, and deployments for easy traceability.
+
+🛠️ Technologies Used
+
+Git + Bitbucket for version control.
+
+Bamboo CI/CD for automation.
+
+Docker + Docker Hub for containerization.
+
+AWS for deployment environments.
+
+🔁 Git Flow Branching Strategy
+
+Branch Type
+
+Purpose
+
+Notes
+
+develop
+
+Main development branch
+
+Docker images are built here
+
+feature/
+
+Work on new features
+
+Branched from develop
+
+release/
+
+Prepare releases
+
+Created automatically from develop
+
+hotfix/
+
+Quick fixes
+
+Branched from release, merged back to release and develop
+
+⚙️ CI/CD with Bamboo
+
+Bamboo builds Docker images from the develop branch.
+
+Each build gets a unique build number tag.
+
+The Git commit is tagged with the same build number.
+
+Example:
+
+Build #42 creates Docker image mycompany/leap-ui:42.
+
+Git commit 1d7bb1f is tagged as 42.
+
+📦 Docker Image Management
+
+Docker images are pushed to Docker Hub.
+
+Images are tagged with build numbers and environment names.
+
+Environment tags point to the current deployed version.
+
+Example:
+
+Image mycompany/leap-ui:42 deployed to Dev environment.
+
+Tagged as mycompany/leap-ui:DEV.
+
+Git commit 1d7bb1f also tagged DEV.
+
+🚀 Deployment Pipeline
+
+Bamboo identifies the Docker image by build number.
+
+The image is deployed to the target environment (Dev, QA, Prod).
+
+Environment tags are applied to Docker images and Git commits.
+
+🔍 Traceability Model
+
+Identifier
+
+Purpose
+
+Build Number (42)
+
+Unique tag for traceability
+
+Git Commit (1d7bb1f)
+
+Source code reference
+
+Docker Image (mycompany/leap-ui:42)
+
+Built artifact
+
+Environment Tag (DEV)
+
+Points to current deployment
+
+📈 Benefits
+
+Clear separation of development and release workflows.
+
+Automated and repeatable builds and deployments.
+
+Full traceability from code to runtime.
+
+Easy rollback and auditing.
+
+README
+
+DevOps Pipeline Project
+
+This repository contains a simple, real-life example of a DevOps pipeline I use to manage software delivery.
+
+What it does:
+
+Organizes code changes with Git Flow.
+
+Automates build and deployment with Bamboo.
+
+Packages applications into Docker containers.
+
+Tracks code commits, builds, and deployments for full traceability.
+
+Why it matters:
+
+This pipeline helps deliver software faster, with fewer errors, and makes it easy to see what’s running where.
+
+Technologies:
+
+Git + Bitbucket
+
+Bamboo CI/CD
+
+Docker + Docker Hub
+
+AWS
+
+How to use:
+
+Check the branches and Bamboo plans to see how code moves from development to production, and how Docker images are built and deployed.
